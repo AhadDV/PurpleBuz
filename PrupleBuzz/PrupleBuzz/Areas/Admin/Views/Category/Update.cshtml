@@ -1,0 +1,37 @@
+﻿@model Category
+@{
+    ViewData["Title"] = "Update";
+}
+
+<div class="col-md-6 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Update Category</h4>
+            <p class="card-description">
+                Basic form layout
+            </p>
+            <form class="forms-sample" method="post" enctype="multipart/form-data">
+
+                <div class="alert alert-danger" asp-validation-summary="ModelOnly"></div>
+                <div class="form-group">
+                    <label asp-for="Name"></label>
+                    <input asp-for="Name" class="form-control" placeholder="Category Name">
+                    <span class="text text-danger" asp-validation-for="Name"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="FormFile"></label>
+                    <input asp-for="FormFile" accept="image/*" class="form-control" placeholder="Category Name">
+                    <span class="text text-danger" asp-validation-for="FormFile"></span>
+                </div>
+
+                <div class="form-group">
+                  <img style="width:200px" src="~/assets/img/@Model?.Image"/>
+                </div>
+                <button type="submit" class="btn btn-primary me-2">Edit</button>
+                <button class="btn btn-light" asp-action="Index">Go Back</button>
+            </form>
+        </div>
+    </div>
+</div>
+

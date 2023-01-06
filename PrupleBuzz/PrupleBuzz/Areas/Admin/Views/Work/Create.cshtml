@@ -1,0 +1,46 @@
+﻿@model Work
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="main-panel">
+    <div class="content-wrapper">
+        <div class="row">
+            <div class="col-md-6 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Default form</h4>
+                        <p class="card-description">
+                            Basic form layout
+                        </p>
+                        <form class="forms-sample" action="create" method="post" enctype="multipart/form-data">
+                            <div class="alert alert-danger" asp-validation-summary="ModelOnly"></div>
+                            <div class="form-group">
+                                <label asp-for="Title"></label>
+                                <input asp-for="Title" class="form-control" placeholder="Work Title">
+                                <span class="text text-danger" asp-validation-for="Title"></span>
+                            </div>
+
+                             <div class="form-group">
+                                <label asp-for="Description"></label>
+                                <input asp-for="Description" class="form-control" placeholder="Work Title">
+                                <span class="text text-danger" asp-validation-for="Description"></span>
+                            </div>
+
+
+                            <div class="form-group">
+                                <label asp-for="FormFiles"></label>
+                                <input asp-for="FormFiles" accept="image/*" class="form-control" placeholder="Category Name">
+                                <span class="text text-danger" asp-validation-for="FormFiles"></span>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary me-2">Submit</button>
+                            <button class="btn btn-light" asp-action="Index">Go Back</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
